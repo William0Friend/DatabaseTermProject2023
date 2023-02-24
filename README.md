@@ -1,5 +1,15 @@
 # DatabaseTermProject2023
  Willaim Friend and Latrel Barnes Skeleton Database and example app
+
+Project 2023
+Feb 24th - DB design – hand drawn on paper is fine
+March 3 - Front End Gui - Manager and/or Staff – actual code, it does not need to be integrated with anything, it can be static
+March 15 - Demo integration of front end (i.e. php, python, c#, etc) to the backend (i.e. sql server or mysql), it must work in both directions, something very simple is find. For Example: Part 1 - using a GUI front end ask a user to enter a number, enter the number into a table in the DB. Part 2 – Click a button on the GUI, grab the number from the DB and display it to the user
+April 5 and 7 - Sales/Staff Side  
+April 26 & 28 - Inventory/Stock side  
+List of Topics and Sub-Modules for Project 2023
+
+
 Bike Stores
 
 # Basic Idea: you are the proud owner of multiple bike stores, you have staff that work at the bike stores, one staff member is a manager at each store (you can assume this person is always the manager). You sell lots of categories and brands of bikes. You keep track of your customer information, when a customer places an order they can buy lots of items on one order. You do allow your staff to provide a discount for each order when a customer places an order, you cannot also not have any discount on an order. You also need to keep track of your stock/inventory and if you sell an item you need to reduce your stock/inventory of that item.
