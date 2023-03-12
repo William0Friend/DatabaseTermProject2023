@@ -3,42 +3,98 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <main>
-        <section class="row" aria-labelledby="aspnetTitle">
-            <h1 id="aspnetTitle">ASP.NET</h1>
-            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-            <p><a href="http://www.asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-        </section>
+       
+        <div>
+            <label>Name</label>
+            <asp:TextBox ID="txtName" runat="server" />
+            <asp:RequiredFieldValidator runat="server" ID="rfvName" ControlToValidate="txtName" ErrorMessage="******NEEDS (proper) INPUT******" />
+        </div>
+
+        <div>
+            <label>Email</label>
+            <asp:TextBox ID="txtEmail" runat="server" />
+            <asp:RequiredFieldValidator runat="server" ID="rfvEmail" ControlToValidate="txtEmail" ErrorMessage="******NEEDS (proper) INPUT******" />
+
+        </div>
+        <div>
+            <label>Age</label>
+            <asp:TextBox ID="txtAge" runat="server" />
+        <asp:RequiredFieldValidator runat="server" ID="rfvAge" ControlToValidate="txtAge" ErrorMessage="******NEEDS (proper) INPUT******" />
+
+        </div>
+        <div>
+            <label>Phone</label>
+            <asp:TextBox ID="txtPhone" runat="server" />
+        <asp:RequiredFieldValidator runat="server" ID="rfvPhone" ControlToValidate="txtPhone" ErrorMessage="******NEEDS (proper) INPUT******" />
+
+        </div>
+        <div>
+            <label>Fovorite Color</label>
+            <asp:DropDownList ID="ddlColor" runat="server">
+                <asp:ListItem Text="Please choose a color" Value="" />
+                <asp:ListItem Text="Blue" Value="Blue" />
+                <asp:ListItem Text="Red" Value="Red" />
+                <asp:ListItem Text="Yellow" Value="Yellow" />
+                <asp:ListItem Text="Green" Value="Green" />            
+                <asp:ListItem Text="Purple" Value="Purple" />
+            </asp:DropDownList>
+        </div>
 
         <div class="row">
-            <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-                <h2 id="gettingStartedTitle">Getting started</h2>
-                <p>
-                    ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-                A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-                </p>
+            <asp:Button ID="btnSubmit" runat="server" Text="Submit Info" OnClick="btnSubmit_Click" />
+        </div>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="row" aria-labelledby="aspnetTitle">
+            <h1 id="h1Title">JWLBikeShop</h1>
+            <p class="lead">Fill out form please</p>
+        </section>
+        <div class="row">
+            <section class="col-md-4" aria-labelledby="h2formfn">
+                <h2 id="h2formfn"> fn </h2>
+                <label>Staff First Name</label>
+                <asp:TextBox ID="StaffFirstName" runat="server" />
             </section>
-            <section class="col-md-4" aria-labelledby="librariesTitle">
-                <h2 id="librariesTitle">Get more libraries</h2>
-                <p>
-                    NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-                </p>
+            <section class="col-md-4" aria-labelledby="h2formln">
+                <h2 id="h2formln">ln </h2>
+                <label>Staff First Name</label>
+                <asp:TextBox ID="StaffSecondName" CssClass="text-danger" runat="server" />
             </section>
-            <section class="col-md-4" aria-labelledby="hostingTitle">
-                <h2 id="hostingTitle">Web Hosting</h2>
-                <p>
-                    You can easily find a web hosting company that offers the right mix of features and price for your applications.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-                </p>
+            <section class="col-md-4" aria-labelledby="h2formsql">
+                <h2 id="h2formsql"> sql</h2>
+                <label>SQL</label>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server">
+                   
+                </asp:SqlDataSource>
             </section>
         </div>
+
+         <div class="message">
+            <asp:Literal ID="ltMessage" runat="server" />
+        </div>
+
     </main>
 
 </asp:Content>

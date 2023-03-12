@@ -1,0 +1,12 @@
+D:\GitHub\DatabaseTermProject2023\ProjectFeesWindows\bin\Debug\net7.0-windows\ProjectFeesWindows.deps.json
+D:\GitHub\DatabaseTermProject2023\ProjectFeesWindows\bin\Debug\net7.0-windows\ProjectFeesWindows.dll
+D:\GitHub\DatabaseTermProject2023\ProjectFeesWindows\bin\Debug\net7.0-windows\ProjectFeesWindows.pdb
+D:\GitHub\DatabaseTermProject2023\ProjectFeesWindows\obj\Debug\net7.0-windows\ProjectFeesWindows.csproj.AssemblyReference.cache
+D:\GitHub\DatabaseTermProject2023\ProjectFeesWindows\obj\Debug\net7.0-windows\ProjectFeesWindows.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\DatabaseTermProject2023\ProjectFeesWindows\obj\Debug\net7.0-windows\ProjectFeesWindows.AssemblyInfoInputs.cache
+D:\GitHub\DatabaseTermProject2023\ProjectFeesWindows\obj\Debug\net7.0-windows\ProjectFeesWindows.AssemblyInfo.cs
+D:\GitHub\DatabaseTermProject2023\ProjectFeesWindows\obj\Debug\net7.0-windows\ProjectFeesWindows.csproj.CoreCompileInputs.cache
+D:\GitHub\DatabaseTermProject2023\ProjectFeesWindows\obj\Debug\net7.0-windows\ProjectFeesWindows.dll
+D:\GitHub\DatabaseTermProject2023\ProjectFeesWindows\obj\Debug\net7.0-windows\refint\ProjectFeesWindows.dll
+D:\GitHub\DatabaseTermProject2023\ProjectFeesWindows\obj\Debug\net7.0-windows\ProjectFeesWindows.pdb
+D:\GitHub\DatabaseTermProject2023\ProjectFeesWindows\obj\Debug\net7.0-windows\ref\ProjectFeesWindows.dll
