@@ -1,55 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
 using System.Web;
-using System.Web.Configuration;
+using System.Linq;
 using System.Web.UI;
+using System.Data.SqlClient;
+using System.Web.Configuration;
 using System.Web.UI.WebControls;
+using System.Collections.Generic;
 
 namespace jwltfbBikeShopWebApp
 {
-    public partial class _Default : Page  : System.Web.UI.Page
+    public partial class _Default : Page  
     {
        
             protected void Page_Load(object sender, EventArgs e)
             {
-                var connectionFromConfiguration = WebConfigurationManager.ConnectionStrings["DBConnection"];
-
-                using (SqlConnection dbConnection = new SqlConnection(connectionFromConfiguration.ConnectionString))
-                {
-                    try
-                    {
-                        dbConnection.Open();
-                         bikeshopeIn.Text = "Connection successful.";
-                        try
-                        {
-                            SqlCommand command = new SqlCommand("SELECT * FROM jwltbfBikeShop", dbConnection);
-                            SqlDataReader reader = command.ExecuteReader();
-                            if (reader.HasRows)
-                            {
-                                while (reader.Read())
-                                {
-                            bikeShopOut.Text += string.Format("<li>\"{0}\"\"{2}\"\"{3}\"\"{4}\"\"{5}</li>", reader.GetString(5), reader.GetString(4) reader.GetString(3) reader.GetString(2), reader.GetString(1), reader.GetString(0)));
-                                }
-                            }
-                        }
-                        catch (SqlException ex)
-                        {
-                    bikeShopOut.Text = "<li> Select Command Failed:" + ex.Message + "</li>";
-                        }
-                    }
-                    catch (SqlException ex)
-                    {
-                bikeshopeIn.Text = "Connection failed: " + ex.Message;
-                    }
-                    finally
-                    {
-                        dbConnection.Close();
-                        dbConnection.Dispose();
-                    }
-
-                }
+            
             }
  
     ///Working

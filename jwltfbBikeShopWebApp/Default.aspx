@@ -230,10 +230,3 @@
     </main>
 
 </asp:Content>
-
-<!--
-     <connectionStrings>
-   <add name="DBConnection" providerName="System.Data.SqlClient" connectionString="data source=DESKTOP-V1TNUF0\SQLEXPRESS; initial catalog=sqlexpressexample;user id=user;password=password;persist security info=True;packet size=4096"/>
-  </connectionStrings>
-
--->
