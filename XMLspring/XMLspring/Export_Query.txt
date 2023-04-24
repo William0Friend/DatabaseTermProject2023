@@ -1,0 +1,23 @@
+SELECT * FROM MyGames
+FOR XML PATH ('GAMES'), ROOT ('CATALOG')
+
+SELECT (select TITLE, RELEASEYEAR, DEVELOPER
+
+FROM MyGames
+WHERE RELEASEYEAR < 2015
+
+FOR XML PATH('Not_Recent_Game'), ROOT('OlderGames'), TYPE)
+
+DECLARE @x xml
+
+SET @x = 
+(
+SELECT (select TITLE, PRICE
+
+FROM MyGames
+WHERE PRICE < 29.99
+
+FOR XML PATH('Cheaper_Game'), ROOT('Bargain_Bin'), TYPE))
+
+SELECT @x
+

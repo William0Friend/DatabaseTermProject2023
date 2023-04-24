@@ -1,0 +1,23 @@
+  DECLARE @x xml
+  
+  SELECT @x=G
+  FROM OPENROWSET (BULK 'D:\BACKUP-Aug-11-2015\Classes IT and DB\DB\DB Class\sQL Server\PerryPost_SQLServer_PPT\Class\XML presentation\XML Presentation\Games.xml', SINGLE_BLOB) AS Games(G)
+
+  DECLARE @hdoc int
+
+  EXEC sp_xml_preparedocument @hdoc OUTPUT, @x 
+
+  SELECT *
+  INTO MyGames
+  FROM OPENXML (@hdoc, '/CATALOG/GAME', 2)
+  WITH (
+			ID int,
+			TITLE VARCHAR(30),
+			DEVELOPER VARCHAR(30),
+			RELEASEYEAR int,
+			PRICE float
+		)
+
+  EXEC sp_xml_removedocument @hdoc
+  
+  SELECT * FROM MyGames

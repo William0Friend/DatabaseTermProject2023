@@ -12,7 +12,7 @@ namespace BikeShop_working_empty
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
             conn.Open();

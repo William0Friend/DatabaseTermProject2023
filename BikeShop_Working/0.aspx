@@ -238,11 +238,13 @@
             <label>Source Store:</label>
              <asp:DropDownList ID="ddlSourceStore" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlSourceStore_SelectedIndexChanged"></asp:DropDownList>
         </div>
+            PopulateProductDropDown();
 
     <asp:Label ID="lblMessage" runat="server" ForeColor="Green" >place order...</asp:Label>
       <br />
 
         <asp:Button ID="btnPlaceOrder" runat="server" Text="Place Order" OnClick="btnPlaceOrder_Click" />
+
     <%--        <asp:Button ID="btnAddItem" runat="server" Text="Add Item" OnClick="btnAddItem_Click" /> < br /> --%>
 
       <%--<asp:GridView ID="gvOrderItems" runat="server" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2">
@@ -256,12 +258,13 @@
             <SortedDescendingCellStyle BackColor="#F1E5CE" />
             <SortedDescendingHeaderStyle BackColor="#93451F" />
       </asp:GridView>  --%>
+    <asp:DropDownList ID="DropDownList1" runat="server" />
 
       <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2BikeShop2 %>" SelectCommand="SELECT * FROM [Orders]"></asp:SqlDataSource>
       <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2BikeShop2 %>" SelectCommand="SELECT * FROM [Order_Items]"></asp:SqlDataSource>
       <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2BikeShop2 %>" SelectCommand="SELECT * FROM [Stock]"></asp:SqlDataSource>
       <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2BikeShop2 %>" SelectCommand="SELECT * FROM [Products]"></asp:SqlDataSource>
-      <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+      <asp:Label ID="Label5" runat="server" Text="Label">The Bike Shop Order Form</asp:Label>
       <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" DataKeyNames="Order_ID" DataSourceID="SqlDataSource5" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
           <AlternatingRowStyle BackColor="#DCDCDC" />
           <Columns>
@@ -282,7 +285,7 @@
           <SortedDescendingCellStyle BackColor="#CAC9C9" />
           <SortedDescendingHeaderStyle BackColor="#000065" />
       </asp:GridView>
-      <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+      <asp:Label ID="Label6" runat="server" Text="Label">Orders</asp:Label>
       <asp:GridView ID="GridView5" runat="server" AutoGenerateColumns="False" DataKeyNames="Order_Item_ID" DataSourceID="SqlDataSource6" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
           <AlternatingRowStyle BackColor="#DCDCDC" />
           <Columns>
@@ -302,7 +305,7 @@
           <SortedDescendingCellStyle BackColor="#CAC9C9" />
           <SortedDescendingHeaderStyle BackColor="#000065" />
       </asp:GridView>
-      <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
+      <asp:Label ID="Label7" runat="server" Text="Label">Stock</asp:Label>
       <asp:GridView ID="GridView6" runat="server" AutoGenerateColumns="False" DataKeyNames="Stock_ID" DataSourceID="SqlDataSource7" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
           <AlternatingRowStyle BackColor="#DCDCDC" />
           <Columns>
@@ -321,7 +324,7 @@
           <SortedDescendingCellStyle BackColor="#CAC9C9" />
           <SortedDescendingHeaderStyle BackColor="#000065" />
       </asp:GridView>
-      <asp:Label ID="Label8" runat="server" Text="Label"></asp:Label>
+      <asp:Label ID="Label8" runat="server" Text="Label">Products...</asp:Label>
       <asp:GridView ID="GridView7" runat="server" AutoGenerateColumns="False" DataKeyNames="Product_ID" DataSourceID="SqlDataSource8" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None">
           <AlternatingRowStyle BackColor="PaleGoldenrod" />
           <Columns>
@@ -341,5 +344,44 @@
           <SortedDescendingCellStyle BackColor="#E1DB9C" />
           <SortedDescendingHeaderStyle BackColor="#C2A47B" />
       </asp:GridView>
+
+         <asp:Label ID="Label11" runat="server" Text="Label">Bike Brands</asp:Label>
+    <asp:SqlDataSource ID="SqlDataSource11" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2BikeShop2 %>" SelectCommand="SELECT * FROM [Bike_Brands]"></asp:SqlDataSource>
+    <asp:GridView ID="GridView10" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Brand_ID" DataSourceID="SqlDataSource11" ForeColor="#333333" GridLines="None">
+        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+        <Columns>
+            <asp:BoundField DataField="Brand_ID" HeaderText="Brand_ID" InsertVisible="False" ReadOnly="True" SortExpression="Brand_ID" />
+            <asp:BoundField DataField="Brand_Name" HeaderText="Brand_Name" SortExpression="Brand_Name" />
+        </Columns>
+        <EditRowStyle BackColor="#999999" />
+        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#E9E7E2" />
+        <SortedAscendingHeaderStyle BackColor="#506C8C" />
+        <SortedDescendingCellStyle BackColor="#FFFDF8" />
+        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+    </asp:GridView>
+     <asp:Label ID="Label10" runat="server" Text="Label">Bike Categories</asp:Label>
+    <asp:SqlDataSource ID="SqlDataSource12" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2BikeShop2 %>" SelectCommand="SELECT * FROM [Bike_Categories]"></asp:SqlDataSource>
+    <asp:GridView ID="GridView11" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Category_ID" DataSourceID="SqlDataSource12" ForeColor="#333333" GridLines="None">
+        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+        <Columns>
+            <asp:BoundField DataField="Category_ID" HeaderText="Category_ID" InsertVisible="False" ReadOnly="True" SortExpression="Category_ID" />
+            <asp:BoundField DataField="Category_Name" HeaderText="Category_Name" SortExpression="Category_Name" />
+        </Columns>
+        <EditRowStyle BackColor="#999999" />
+        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#E9E7E2" />
+        <SortedAscendingHeaderStyle BackColor="#506C8C" />
+        <SortedDescendingCellStyle BackColor="#FFFDF8" />
+        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+    </asp:GridView>
 
 </asp:Content>
